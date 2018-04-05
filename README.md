@@ -82,8 +82,8 @@ export default function Content(props) {
             {({state, action}) => {
                 return <React.Fragment>
                     <Route path="/"><div>main</div></Route>
-                    <Route path="/users"><div>users</div></Route>
-                    <Route path="/products"><div>products</div></Route>
+                    <Route path="/users"><UserContainer /></Route>
+                    <Route path="/products"><ProductContainer /></Route>
                 </React.Fragment>
             }}
         </RouterConsumer>

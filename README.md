@@ -4,7 +4,7 @@ This is my explorations  using new React Context Api.
 
 This experimentation try work with multiples context and discovery what it's best approach.
 
-![Screenshot](https://raw.githubusercontent.com/stvkoch/experiment_with_react_16.3/master/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/stvkoch/experiment_with_react_16.3/master/src/screenshot.png)
 
 
 ## install

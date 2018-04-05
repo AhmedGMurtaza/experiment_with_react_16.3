@@ -2,7 +2,7 @@ import React, { createContext } from 'react';
 
 
 const initialState = {
-    list: [
+    products: [
         {name: 'Product A', price: 1},
         {name: 'Product B', price: 12},
         {name: 'Product C', price: 123},

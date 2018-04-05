@@ -1,17 +1,27 @@
 
-import React, { Component } from 'react';
+import React, { createContext } from 'react';
 
-import * as UserContext from './../Contexts/User';
+const initialState = {
+    name: 'Johnny Wray',
+    role: 'Captian',
+    boat: 'Ngataki',
+    quote: 'Conglomerations of facts occasioned by heterogeneous concatenations of stupid irrelevancies'
+};
 
-export default class User extends Component{
-    state = UserContext.initialState;
-    action = UserContext.action(this);
+const Context = createContext()
+const {Provider, Consumer} = Context;
+
+class User extends React.Component{
+    state = initialState;
+    action = {};
 
     render() {
-        return <UserContext.Provider value={createValue(this.state, this.action)}>{this.props.children}</UserContext.Provider>;
+        return <Provider value={createValue(this.state, this.action)}>{this.props.children}</Provider>;
     }
 }
 
 function createValue(state = {}, action = {}) {
   return {state, action}
 }
+
+export { User as default, Consumer };

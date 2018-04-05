@@ -8,8 +8,7 @@ import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 
-import {Consumer as RouterConsumer} from './Contexts/Router';
-import { actions } from './Contexts/User';
+import { Consumer as RouterConsumer } from './ContextContainer/Router';
 
 const styles = {
   root: {
@@ -24,27 +23,31 @@ const styles = {
   },
 };
 
-function ButtonAppBar(props) {
+function AppToolBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
+
           <Typography variant="title" color="inherit" className={classes.flex}>
             Multiples Providers in new React context api
           </Typography>
-          <RouterConsumer>{({action}) => <React.Fragment>
-            <Button color="inherit" onClick={()=>action.go('/users')}>Users</Button>
-            <Button color="inherit" onClick={()=>action.go('/products')}>Products</Button>
-          </React.Fragment>}</RouterConsumer>
+
+          <RouterConsumer>
+            {({action}) => <React.Fragment>
+              <Button color="inherit" onClick={()=>action.go('/users')}>Users</Button>
+              <Button color="inherit" onClick={()=>action.go('/products')}>Products</Button>
+            </React.Fragment>}
+          </RouterConsumer>
         </Toolbar>
       </AppBar>
     </div>
   );
 }
 
-ButtonAppBar.propTypes = {
+AppToolBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ButtonAppBar);
+export default withStyles(styles)(AppToolBar);

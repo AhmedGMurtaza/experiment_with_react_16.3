@@ -1,7 +1,6 @@
 import React from 'react';
 
-import * as Router from './Contexts/Router';
-
+import RouterContextContainer from './ContextContainer/Router';
 import UserContextContainer from './ContextContainer/User';
 import ProductContextContainer from './ContextContainer/Product';
 
@@ -12,32 +11,19 @@ import './App.css';
 
 
 
-
 class App extends React.Component {
-  state = {
-    router: Router.initialState
-  };
-
-  action = {
-    router: Router.action(this)
-  };
-
   render() {
     return (
-      <Router.Provider value={createValue(this.state.router, this.action.router)}>
+      <RouterContextContainer>
         <UserContextContainer>
           <ProductContextContainer>
             <Toobar />
             <Content />
           </ProductContextContainer>
         </UserContextContainer>
-      </Router.Provider>
+      </RouterContextContainer>
     );
   }
-}
-
-function createValue(state = {}, action = {}) {
-  return {state, action}
 }
 
 export default App;

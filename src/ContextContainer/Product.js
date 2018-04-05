@@ -15,14 +15,9 @@ const initialState = {
 const Context = createContext()
 const {Provider, Consumer} = Context;
 
-
 class Product extends React.Component{
     state = initialState;
-
-    action = {
-
-    };
-
+    action = {};
     render() {
         return <Provider value={createValue(this.state, this.action)}>{this.props.children}</Provider>;
     }

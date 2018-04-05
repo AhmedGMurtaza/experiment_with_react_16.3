@@ -18,7 +18,7 @@ export default class Product extends React.Component{
             <TableBody>
                 <Consumer>{({state}) => 
                     <React.Fragment>{state.products.map(product => {
-                        return <TableRow>
+                        return <TableRow key={product.id}>
                             <TableCell>{product.name}</TableCell>
                             <TableCell>{product.price}</TableCell>
                             <TableCell><Button variant="raised" color="primary">Buy</Button></TableCell>

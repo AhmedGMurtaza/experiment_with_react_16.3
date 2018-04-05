@@ -3,11 +3,11 @@ import React, { createContext } from 'react';
 
 const initialState = {
     products: [
-        {name: 'Product A', price: 1},
-        {name: 'Product B', price: 12},
-        {name: 'Product C', price: 123},
-        {name: 'Product D', price: 1234},
-        {name: 'Product E', price: 12345},
+        {id: 1, name: 'Product A', price: 1},
+        {id: 12, name: 'Product B', price: 12},
+        {id: 123, name: 'Product C', price: 123},
+        {id: 1234, name: 'Product D', price: 1234},
+        {id: 12345, name: 'Product E', price: 12345},
     ],
     page: 1
 };

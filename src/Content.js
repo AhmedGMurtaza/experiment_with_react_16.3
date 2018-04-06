@@ -1,14 +1,15 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
 
-import {Consumer as RouterConsumer, Route} from './ContextContainer/Router';
-
 import UserContainer from './Container/User';
 import ProductContainer from './Container/Product';
 
+import { Consumer } from './ContextContainer/Router';
+import Route from './ContextContainer/Route';
+
 export default function Content(props) {
     return <Paper style={{padding:20, margin: 20}}>
-        <RouterConsumer>
+        <Consumer>
             {({state, action}) => {
                 return <React.Fragment>
                     <Route path="/"><div>main</div></Route>
@@ -16,6 +17,6 @@ export default function Content(props) {
                     <Route path="/products"><ProductContainer /></Route>
                 </React.Fragment>
             }}
-        </RouterConsumer>
+        </Consumer>
     </Paper>;
 }

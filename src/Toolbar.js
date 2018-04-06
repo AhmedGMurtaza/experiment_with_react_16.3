@@ -6,7 +6,8 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 
-import { Consumer as RouterConsumer } from './ContextContainer/Router';
+import { Consumer } from './ContextContainer/Router';
+import Link from './ContextContainer/Link';
 
 const styles = {
   root: {
@@ -31,13 +32,13 @@ function AppToolBar(props) {
           <Typography variant="title" color="inherit" className={classes.flex}>
             Multiples Providers in new React context api
           </Typography>
-
-          <RouterConsumer>
+          <Link path="/" component={Button} color="inherit">Home</Link>
+          <Link path="/users" component={Button} color="inherit">User</Link>
+          <Consumer>
             {({action}) => <React.Fragment>
-              <Button color="inherit" onClick={()=>action.go('/users')}>Users</Button>
               <Button color="inherit" onClick={()=>action.go('/products')}>Products</Button>
             </React.Fragment>}
-          </RouterConsumer>
+          </Consumer>
         </Toolbar>
       </AppBar>
     </div>

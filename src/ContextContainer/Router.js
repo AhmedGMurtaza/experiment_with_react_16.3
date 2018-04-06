@@ -1,6 +1,5 @@
 import React, { createContext } from 'react';
 import history from 'browser-history';
-import pathToRegexp from 'path-to-regexp';
 
 const initialState = {
     url: window.location.pathname
@@ -9,15 +8,14 @@ const initialState = {
 const Context = createContext()
 const {Provider, Consumer} = Context;
 
-
 class Router extends React.Component{
     state = initialState;
 
     action = {
         go: (url) => this.setState(
-            state => ({...state, url}),
-            () => history(url)
-        )
+                state => ({...state, url}),
+                () => history(url)
+            )
     };
 
     componentDidMount() {
@@ -25,22 +23,8 @@ class Router extends React.Component{
     }
 
     render() {
-        return <Provider value={createValue(this.state, this.action)}>{this.props.children}</Provider>;
+        return <Provider value={{state: this.state, action:this.action}}>{this.props.children}</Provider>;
     }
 }
 
-
-function createValue(state = {}, action = {}) {
-  return {state, action}
-}
-
-function Route(props) {
-    return (<Consumer>
-        {({state})=> {
-            const re = pathToRegexp(props.path);
-            if (re.test(state.url)) return props.children;
-        }}
-    </Consumer>);
-}
-
-export { Router as default, Consumer, Route };
+export { Router as default, Consumer };

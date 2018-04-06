@@ -51,7 +51,7 @@ And, of course, we want to be able to navigate to a certains url:
 ## Dependencies
 
 
-I will not reinvent the wheel and we will use the same dependencies as the React-Router itself.
+I will not reinvent the wheel and we will use most the same dependencies as the React-Router itself.
 
 To deal with pushstate we'll use [browser-history] (https://www.npmjs.com/package/browser-history) instead of [history] (https://www.npmjs.com/package/history)
 

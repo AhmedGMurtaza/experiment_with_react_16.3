@@ -17,7 +17,7 @@ Contexts are a way to pass states from top to bottom (parent to grandchildren) w
 
 The new React Context API has three main parts:
 
-_retirado de [dailyjs](https://medium.com/dailyjs/reacts-%EF%B8%8F-new-context-api-70c9fe01596b)_:
+_From [dailyjs](https://medium.com/dailyjs/reacts-%EF%B8%8F-new-context-api-70c9fe01596b)_:
 
 - "React.createContext which is passed the initial value (and optionally a fancy opt-out function that uses a bitmask). This returns an object with a Provider and a Consumer"
 - "The Provider component is used higher in the tree and accepts a prop called value (which can be anything)."

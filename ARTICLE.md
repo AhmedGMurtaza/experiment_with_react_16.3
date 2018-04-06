@@ -55,13 +55,15 @@ I will not reinvent the wheel and we will use most the same dependencies as the 
 
 To deal with pushstate we'll use [browser-history] (https://www.npmjs.com/package/browser-history) instead of [history] (https://www.npmjs.com/package/history)
 
-`yarn add browser-history 
-
+```
+yarn add browser-history 
+```
 
 To address the routes we will use [pathToRegexp] (https://www.npmjs.com/package/path-to-regexp)
 
-`yarn add path-to-regexp
-
+```
+yarn add path-to-regexp
+```
 
 
 ## Create a Router context container
